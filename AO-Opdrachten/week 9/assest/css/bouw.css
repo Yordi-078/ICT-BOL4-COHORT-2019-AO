@@ -1,0 +1,77 @@
+body{
+    display:grid;
+    grid-template-columns:100%;
+    grid-template-rows: 75px 450px 240px 200px 300px 600px 100px;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.grid-fotos{
+    display: grid;
+    grid-template-rows: 220px;
+    grid-template-columns: 300px 300px 300px;
+    column-gap:33px;
+}
+.grid-container-knoppen{
+    display: grid;
+    grid-template-rows: 220px;
+    grid-template-columns: 300px 300px 300px;
+    column-gap:33px;
+}
+.grid-tekst{
+    display: grid;
+    grid-template-rows: 600px;
+    grid-template-columns: 600px 100px 300px;
+}
+
+.header{
+background-image: url('../img/header.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 400px;
+margin-bottom: 40px;  
+}
+
+
+
+.banner{
+background-color: white;
+}
+
+.yellow{
+background-color: yellow;
+margin-bottom: 40px;
+}
+
+.button{
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
+.grey{
+    background-image: url('../img/footer.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+background-color: white;
+}
+
+.green{
+background-color: white;
+}
+
+.footer{
+    background-color: brown;
+}
