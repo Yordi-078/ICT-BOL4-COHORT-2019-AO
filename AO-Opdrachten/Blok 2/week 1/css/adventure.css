@@ -1,0 +1,120 @@
+
+
+.grid-container-startpagina{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 15px 100px 300px 100px 220px;
+    background-color: white;
+}
+
+
+.gevangenisimg{
+    background-image: url("../img/gevangenis.jpg");
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    background-size: cover;
+}
+
+.buttonstart{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    background-color: white;
+    border:  4px solid #555555;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;   
+}
+
+.buttonstart:hover {
+    background-color: black;
+    color: white;
+  }
+
+.titelimg{
+    display: inline-block;
+    position: relative;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: white;
+    border:  4px solid #555555;
+    text-align: center;
+}
+
+#grid-container-game{
+    border: 6px solid red;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-template-rows: 200px 300px 225px;
+    background-color: black;
+    
+}
+
+#image{
+border: 5px solid red;
+height: 300px;
+width: 600px;
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-start: 2;
+grid-column-end: 4;
+}
+
+#game-buttons{
+    margin-top: 90px;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 7;
+    
+}
+
+#description{
+    text-align: center ;
+    border: 5px solid red;
+    margin-right: 60px;
+    background-color: white;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 6;
+    grid-column-end: 7;
+}
+
+#button1{
+    background-color: white; 
+    font-size: 16px;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    color: black; 
+    border: 5px solid red;
+}
+
+
+#button2{
+    background-color: white; 
+    font-size: 16px;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    color: black; 
+    border: 5px solid red;
+}
+
+#button3{
+    background-color: white; 
+    font-size: 16px;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    color: black; 
+    border: 5px solid red;
+}
+
