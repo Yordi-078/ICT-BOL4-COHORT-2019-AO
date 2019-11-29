@@ -8,6 +8,8 @@ var button3 = document.getElementById("button3");
 var inventoryItem = document.getElementById("inventoryItem");
 
 var key = false;
+var wapen = false
+var handboeien2 = false
 
 function startGame(){
   inventoryItem.style.display = 'none';
@@ -68,11 +70,11 @@ function afmaken(){
 function meeGaan(){
   image.src ='img/meegaan.jpg'
   description.innerHTML = "<h2> Maak je keuze!! </h2> <br> <br> Bart neemt je apart en zegt: ik zie je hele tijd overal kijken en heb een gevoel dat je hier ook niet lang wilt blijven. <br> Doe je mee met een ontsnapping?";
-  button1.innerHTML = "Jaa";
-  button1.setAttribute('onclick','jaa()');
+  button1.innerHTML = "Nee laat me met rust";
+  button1.setAttribute('onclick','nee()');
   button2.style.display = 'inline-block';
-  button2.innerHTML = "Nee laat me met rust";
-  button2.setAttribute('onclick','nee()');
+  button2.innerHTML = "Ja natuurlijk";
+  button2.setAttribute('onclick','jaa()');
 }
 
 function nee(){
@@ -128,20 +130,80 @@ function vraag(){
    description.innerHTML = "<h2> Maak je keuze!! </h2> <br> <br> Ze hebben de sleutel te pakken. <br> Ga weer rustig terug naar de kamer waar alle spullen liggen. ";
   button1.innerHTML = "Ga erheen";
  button1.setAttribute('onclick',' jaa()');
-   button2.style.display = 'none';
+  
  }
 
  function openDeur(){
-  button1.innerHTML = "Haal de sleutel";
-  button1.setAttribute('onclick','vraag()');
-  button2.innerHTML = "Haal de sleutel";
-  button2.setAttribute('onclick','vraag()');
+  image.src ='img/wapens.jpg'
+  description.innerHTML = "<h2> Maak je keuze!! </h2> De kamer is er ligt van alles. <br> Wapens, Handboeien, communicatie middelen en kleding! <br>";
+  button1.innerHTML= "Wapens";
+  button1.setAttribute('onclick','wapens()'); 
+  button2.style.display = 'inline-block';
+  button2.innerHTML = "Handboeien";
+  button2.setAttribute('onclick','handboeien()');
  }
 
+ function wapens(){
+   wapen = true
+  image.src ='img/kledingwapens.jpg'
+  description.innerHTML = "<h2> Maak je keuze!! </h2> Je komt uit de kamer en ineens staat er een politie agent met een wapen op je te richten. <br> Je zoekt dekking <br> hij schiet op je. ";
+  button1.innerHTML= "Wacht tot hij moet reloaden en schiet dan.";
+  button1.setAttribute('onclick','wachten()'); 
+    button2.innerHTML = "Schiet terwijl hij op jou schiet";
+  button2.setAttribute('onclick','schieten()');
+}
 
+function schieten(){
+  image.src ='img/dead.jpg'
+  description.innerHTML = "<h2> Fout!! </h2> <br> <br> Je ging schieten maar hij schoot ook en je werd geraakt en je gaat dood! ";
+  button1.innerHTML = "Ga terug";
+ button1.setAttribute('onclick',' wapens()');
+ button2.style.display = 'none';
+}
 
+function handboeien(){
+ handboeien2 = true
+ image.src ='img/handboeien.jpg'
+ description.innerHTML = "<h2> Maak je keuze!! </h2> <br> <br> Je hebt de handboeien gepakt!!  ";
+ button1.innerHTML = "Ga terug";{
+ if(wapen == true){
+ button1.setAttribute('onclick',' vastbinden()');
+ }else{
+  button1.setAttribute('onclick',' openDeur()');
+  }
+ }
+ button2.style.display = 'none';
 
+}
 
+function wachten(){
+  image.src ='img/handboeien.jpg'
+  description.innerHTML = "<h2> Maak je keuzen!! </h2> <br> <br> Je schoot hem in zijn been! <br> Je moet hem vastbinden! <br> en kleding in zijn mond stoppen! "
+  button2.style.display = 'none';
+  button1.innerHTML = "Bind hem vast";{
+    if(handboeien2 == true){
+      button1.setAttribute('onclick',' vastbinden()');
+    }else{
+      button1.setAttribute('onclick',' handnodig()');
+    }
+  }
+} 
+
+function handnodig(){
+  image.src ='img/handboeien.jpg'
+  description.innerHTML = "<h2> Maak je keuzen!! </h2> Je hebtt handboeien nodig haal ze!!";
+  button1.innerHTML = "Haal de handboeien!";
+  button1.setAttribute('onclick',' handboeien()');
+  button2.style.display = 'none';
+}
+
+function vastbinden(){
+  image.src ='img/handboeien.jpg'
+  description.innerHTML = "<h2> Maak je keuzen!! </h2> goedzoo";
+  button1.innerHTML = "Jaaa!";
+  button1.setAttribute('onclick',' #()');
+  button2.style.display = 'none';
+}
 
 startGame();
 
