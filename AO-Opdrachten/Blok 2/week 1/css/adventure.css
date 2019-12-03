@@ -118,3 +118,9 @@ grid-column-end: 4;
     border: 5px solid red;
 }
 
+#inventoryItem{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;  
+}

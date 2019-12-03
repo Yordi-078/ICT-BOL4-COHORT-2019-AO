@@ -177,8 +177,8 @@ function handboeien(){
 }
 
 function wachten(){
-  image.src ='img/handboeien.jpg'
-  description.innerHTML = "<h2> Maak je keuzen!! </h2> <br> <br> Je schoot hem in zijn been! <br> Je moet hem vastbinden! <br> en kleding in zijn mond stoppen! "
+  image.src ='img/hokitoki.jpg'
+  description.innerHTML = "<h2> Maak je keuzen!! </h2> <br> <br> Je schoot hem in zijn been! <br> Je moet hem vastbinden! <br>  Je hoord geluid komen uit de hokitoki er wordt gevraagd of alles goed ging. <br> je bedreig de agent om te zeggen dat alles goed gaat en dat zijn wapen perongeluk af ging! <br> dat lukt "
   button2.style.display = 'none';
   button1.innerHTML = "Bind hem vast";{
     if(handboeien2 == true){
@@ -191,7 +191,7 @@ function wachten(){
 
 function handnodig(){
   image.src ='img/handboeien.jpg'
-  description.innerHTML = "<h2> Maak je keuzen!! </h2> Je hebtt handboeien nodig haal ze!!";
+  description.innerHTML = "<h2> Maak je keuzen!! </h2> Je hebt handboeien nodig haal ze!!";
   button1.innerHTML = "Haal de handboeien!";
   button1.setAttribute('onclick',' handboeien()');
   button2.style.display = 'none';
@@ -199,13 +199,32 @@ function handnodig(){
 
 function vastbinden(){
   image.src ='img/handboeien.jpg'
-  description.innerHTML = "<h2> Maak je keuzen!! </h2> goedzoo";
-  button1.innerHTML = "Jaaa!";
-  button1.setAttribute('onclick',' #()');
+  description.innerHTML = "<h2> Maak je keuzen!! </h2> Hij is vastgebonden en jullie verstoppen hem in de kamer en doen de deur opslot! <br> In de kamer lag ook de sleutel van de hoofd ingang die hebben jullie meegenomen! <br> Jullie gaan naar de hoofdingang alleen er staat eem bewaker die jullie moeten uitschakelen!";
+  button1.innerHTML = "Schiet hem neer!";
+  button1.setAttribute('onclick',' neerSchieten()');
+  button2.style.display = 'inline-block';
+  button2.innerHTML = "Laat hem zich overgeven!";
+  button2.setAttribute('onclick',' overgeven()');
+}
+
+function overgeven(){
+  image.src ='img/prisonguards.jpg'
+  description.innerHTML = "<h2> Maak je keuzen!! </h2> Hij riep versterking!"; 
+  button1.innerHTML = "Ga terug!";
+  button1.setAttribute('onclick',' vastbinden()');
+}
+
+function neerSchieten(){
+  image.src ='img/prisonescape.jpg'
+  description.innerHTML = "<h2> Maak je keuzen!! </h2>  Jullie schoten de agent neer en deden de deur open! <br> Je bent ontsnapt!"; 
+  button1.innerHTML = "Opnieuw spelen!";
+  button1.setAttribute('onclick',' startGame()');
   button2.style.display = 'none';
 }
 
 startGame();
+
+
 
 
 // inventoryItem.style.display = 'none';
