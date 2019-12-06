@@ -1,56 +1,8 @@
 
-
-.grid-container-startpagina{
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 15px 100px 300px 100px 220px;
-    background-color: white;
+body{
+    margin: 0;
+    padding: 0;
 }
-
-
-.gevangenisimg{
-    background-image: url("../img/gevangenis.jpg");
-    grid-column-start: 1;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 6;
-    background-size: cover;
-}
-
-.buttonstart{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    background-color: white;
-    border:  4px solid #555555;
-    color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;   
-}
-
-.buttonstart:hover {
-    background-color: black;
-    color: white;
-  }
-
-.titelimg{
-    display: inline-block;
-    position: relative;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    background-color: white;
-    border:  4px solid #555555;
-    text-align: center;
-}
-
 #grid-container-game{
     border: 6px solid red;
     display: grid;
@@ -118,9 +70,13 @@ grid-column-end: 4;
     border: 5px solid red;
 }
 
-#inventoryItem{
+img{
+    height: 200px;
+    width: 200px;
+    background-size: cover;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 4;  
 }
+

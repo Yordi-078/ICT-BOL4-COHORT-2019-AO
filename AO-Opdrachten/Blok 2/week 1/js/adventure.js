@@ -125,6 +125,7 @@ function vraag(){
  }
 
  function nepPijn(){
+  inventoryItem.style.display = 'inline-block';
  key = true
   jaa();
    description.innerHTML = "<h2> Maak je keuze!! </h2> <br> <br> Ze hebben de sleutel te pakken. <br> Ga weer rustig terug naar de kamer waar alle spullen liggen. ";
@@ -144,6 +145,7 @@ function vraag(){
  }
 
  function wapens(){
+  inventoryItem.style.display = 'inline-block';
    wapen = true
   image.src ='img/kledingwapens.jpg'
   description.innerHTML = "<h2> Maak je keuze!! </h2> Je komt uit de kamer en ineens staat er een politie agent met een wapen op je te richten. <br> Je zoekt dekking <br> hij schiet op je. ";
@@ -178,7 +180,7 @@ function handboeien(){
 
 function wachten(){
   image.src ='img/hokitoki.jpg'
-  description.innerHTML = "<h2> Maak je keuzen!! </h2> <br> <br> Je schoot hem in zijn been! <br> Je moet hem vastbinden! <br>  Je hoord geluid komen uit de hokitoki er wordt gevraagd of alles goed ging. <br> je bedreig de agent om te zeggen dat alles goed gaat en dat zijn wapen perongeluk af ging! <br> dat lukt "
+  description.innerHTML = "<h2> Maak je keuzen!! </h2> <br> <br> Je schoot hem in zijn been! <br> Je moet hem vastbinden! <br>  Je hoord geluid komen uit de hokitoki er wordt gevraagd of alles goed ging. <br> je bedreigd de agent om te zeggen dat alles goed gaat en dat zijn wapen perongeluk af ging! <br> dat lukt "
   button2.style.display = 'none';
   button1.innerHTML = "Bind hem vast";{
     if(handboeien2 == true){
@@ -212,6 +214,7 @@ function overgeven(){
   description.innerHTML = "<h2> Maak je keuzen!! </h2> Hij riep versterking!"; 
   button1.innerHTML = "Ga terug!";
   button1.setAttribute('onclick',' vastbinden()');
+  button2.style.display = 'none';
 }
 
 function neerSchieten(){
@@ -226,25 +229,3 @@ startGame();
 
 
 
-
-// inventoryItem.style.display = 'none';
-// button1.innerHTML = "help";
-// button1.setAttribute('onclick','level2()');
-// button2.style.display = 'none';
-// button3.style.display = 'none';
-// }
-
-// function level2(){
-// image.src ='img/tralies.jpg'
-// button1.innerHTML = "slaan";
-// button1.setAttribute('onclick','getShovel()');
-// button2.style.display = 'inline-block';
-// button2.innerHTML = "ga terug";
-// button3.style.display = 'inline-block';
-// button3.innerHTML = "verder";
-// }
-
-// function getShovel(){
-//   shovel = treu;
-//   level2();
-// }
