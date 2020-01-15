@@ -479,64 +479,171 @@ var words = [
 	"zever",
 	"zeeen"];
 
+    var raadWoord = words[Math.floor(Math.random() * words.length)];
+
+    
+    
+
+    var currentRow = 1;
+    
+    setFirstLetterOnBord();
+    
+
+    
+     function setFirstLetterOnBord(){
+        raadWoord = raadWoord.toUpperCase();
+         raadWoord = raadWoord.split('');
+        console.log(raadWoord);
+        document.getElementById("r"+currentRow+"c" + 0).innerHTML = raadWoord[0];
+        
+    }
+    
+    
+    function check(){
+		raadWoordx = raadWoord
+        woord = document.getElementById('woord').value;
+        woord = woord.toUpperCase();
+        woordArray = woord.split('');
+        
+        console.log(woordArray)
+
+            for(i=0; i< woordArray.length; i++){
+                document.getElementById("r"+currentRow+"c" + i).innerHTML=woordArray[i]; 
+            }   
+          
+            for(a=0; a< woordArray.length; a++)
+                {
+					document.getElementById("r"+currentRow+"c" + a).style.backgroundColor='white';
+				
+                        
+                    if(woordArray[a] == raadWoordx[a]){
+						document.getElementById("r"+currentRow+"c" + a).style.backgroundColor='green';
+						raadWoordx[a] = "*";
+						woordArray[a] = "-";
+                    }
+                
+					
+			
+              
+			}
+			
+			for(a=0; a< woordArray.length; a++)
+			{
+			if(woordArray.indexOf(raadWoordx[a])> -1){
+				var pos =  woordArray.indexOf(raadWoordx[a]);
+				document.getElementById("r"+currentRow+"c" + a).style.backgroundColor='yellow';
+				raadWoordx[a] = "*";
+				woordArray[pos] = "-"
+
+		}
+                
+	}
+                currentRow = currentRow +1;
+                
+                console.log(currentRow);
+                        }
+    
+    
+    
+    
+        //check();
+
+    
+
+
+    // var raadWoord = words[Math.floor(Math.random() * words.length)];
+
+    
+    
+
+    // var currentRow = 1;
+    
+    // setFirstLetterOnBord();
+    
+
+    
+    //  function setFirstLetterOnBord(){
+    //     raadWoord = raadWoord.toUpperCase();
+    //      raadWoord = raadWoord.split('');
+    //     console.log(raadWoord);
+    //     document.getElementById("r"+currentRow+"c" + 0).innerHTML = raadWoord[0];
+        
+    // }
+    
+    
+    // function check(){
+    //     woord = document.getElementById('woord').value;
+    //     woord = woord.toUpperCase();
+    //     woordArray = woord.split('');
+        
+    //     console.log(woordArray)
+
+    //         for(i=0; i< woordArray.length; i++){
+    //             document.getElementById("r"+currentRow+"c" + i).innerHTML=woordArray[i];
+           
+                         
+                
+	// 		}   
+			
+    //         for(i=0; i< raadWoord.length; i++){
+    //         for(a=0; a< woordArray.length; a++)
+    //             {
+
+
+                        
+    //                 if(woordArray[a] == raadWoord[i] && a == i){
+	// 					document.getElementById("r"+currentRow+"c" + i).style.backgroundColor='green';
+	// 					raadWoord[i] = "*";
+    //                }
+				
+				
+	
+    //                  if(woordArray.includes(raadWoord[i])){
+    //           			 document.getElementById("r"+currentRow+"c" + i).style.backgroundColor='yellow';
+    //          		}
+                
+                
+    //         }
+                
+                
+    //             }
+    //             currentRow = currentRow +1;
+                
+    //             console.log(currentRow);
+    //                     }
+    
+    
+    
+    
+    //     //check();
+
+    
 
 
 
-	var woord = words[Math.floor(Math.random() * words.length)];
-	var woord2      = [];
+
+
+
 	
 	
 	
-	
-	var currentRow = 1;
-	
-	setFirstLetterOnBord();
-	
-	check();
-	
-	function setFirstLetterOnBord(){
-	for (var i = 0; i < woord.length; i++) {
-	woord[i]
-	document.getElementById("r"+currentRow+"c" + i).innerHTML = woord[i].toUpperCase();
-	}
-	currentRow++;
-	}
-	
-	function check(){
-	
-	var textbox = document.getElementById('woord');
-	woord2.push(textbox.value);
-	var woordarray = woord.split('');
-	
-	   
-	
-	   
-	
-	
-	 console.log(woord);
-	
-	
-	//vergelijk elke letter in de woordarray met elke letter van de gegenereerde array
-	//geef feedback op het scherm (geel groen of rood) -> aparte functie?
-	//geef de letter in de boxjes weer (kijk hiervoor naar de code van setFirstletteronbord)
-	//voor de volgende check moet de rij opgehoogd worden (hoog currentrow op)
-	
-	
-	if(true){
-	
-	
-	
-	}
-	
-	
-	
-	}
-	
-	console.log(woord);
 	
 	
 	
 
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+	// 	else if(woordArray.includes(raadWoord[i] > -1)){
+	// 		document.getElementById("r"+currentRow+"c" + i).style.backgroundColor='yellow';
+	// }
 
 
 
