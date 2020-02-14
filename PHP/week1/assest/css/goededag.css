@@ -1,0 +1,42 @@
+
+.container{
+    font-family: 'Lato', sans-serif;
+    margin: auto;
+}
+
+.morning{
+    background-image: url('../img/morning.png');
+    background-size: cover;
+}
+
+.afternoon{
+    background-image: url('../img/afternoon.png');
+    background-size: cover;
+}
+
+.evening{
+    background-image: url('../img/evening.png');
+    background-size: cover;
+}
+
+.night{
+    background-image: url('../img/night.png');
+    background-size: cover;
+}
+
+.goededag{
+    color: white;
+    margin-top: 200px;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+.live{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+
