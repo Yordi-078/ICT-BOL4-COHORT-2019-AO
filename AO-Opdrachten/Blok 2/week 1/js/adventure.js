@@ -26,8 +26,7 @@ image.src ='img/tralies.jpg'
 button1.innerHTML = "Wachten op de pauze";
 button1.setAttribute('onclick','pauze()');
 button2.style.display = 'inline-block';
- button2.innerHTML = "Boos worden";
- button2.setAttribute('onclick','boosWorden()');
+ button2.innerHTeibute('onclick','boosWorden()');
 }
 
 function boosWorden(){
