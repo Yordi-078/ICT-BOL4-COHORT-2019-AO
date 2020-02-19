@@ -7,7 +7,7 @@
 .grid-container{
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 105px 425px 430px 70px;
+    grid-template-rows: 100px 100xp;
     grid-gap: 10px 0 0 10px;
     background-color: white;
   
