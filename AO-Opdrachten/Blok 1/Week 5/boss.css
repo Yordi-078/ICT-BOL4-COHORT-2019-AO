@@ -1,0 +1,72 @@
+body{
+ color: grey;
+}
+
+body {
+    background-image: url("img/achtergrond.jpg.jpg");
+  }
+
+  .logo {
+    margin-top: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+
+  .logo:hover{
+ border: 1px solid black;
+  }
+ 
+ .house:hover {
+  border: 1px solid black;
+}
+
+.features:hover {
+  border: 1px solid black;
+}
+
+.document:hover{
+  border: 1px solid black;
+}
+
+.portfolio:hover{
+  border: 1px solid black;
+}
+
+.blog:hover{
+  border: 1px solid black;
+}
+
+.wolkje:hover{
+  border: 1px solid black;
+}
+
+nav div{
+  display: inline;
+
+}
+
+nav{
+
+  text-align: center;
+}
+
+p{
+  display:inline-block;
+}
+
+.document{
+  opacity: 0.4;
+}
+
+.blog{
+  opacity: 0.5;
+}
+
+.portfolio{
+  opacity: 0.4;
+}
+
+.wolkje{
+  opacity: 0.6;
+}

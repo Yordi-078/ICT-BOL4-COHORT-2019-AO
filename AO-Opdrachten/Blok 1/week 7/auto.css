@@ -1,0 +1,77 @@
+.container{
+    font-family: 'Lato', sans-serif;
+    max-width: 1100px;
+    margin: auto;
+}
+
+    .grid-container{
+        display: grid;
+        grid-template-columns: 550px 550px;
+        grid-template-rows:  200px 450px 450px 450px 450px 200px;
+        grid-gap: 10px 0px 0px 10px;
+        background-color: white;
+
+    }
+
+    .logo{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 2; 
+    }
+
+    .busje{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2; 
+    }
+
+    .amg{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3; 
+    }
+
+    .m1{
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 2; 
+    }
+
+    .m2{
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 3; 
+    }
+
+    .cabrio{
+        grid-row-start: 4;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 2; 
+
+    }
+
+    .m3{
+        grid-row-start: 4;
+        grid-row-end: 5;
+        grid-column-start: 2;
+        grid-column-end: 3; 
+
+    }
+
+    .navigatie{
+        grid-row-start: 5;
+        grid-row-end: 6;
+        grid-column-start: 1;
+        grid-column-end: 2; 
+
+    }
+
+    .navigatie{
+        text-align: center;
+    }
