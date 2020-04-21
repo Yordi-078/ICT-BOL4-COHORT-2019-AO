@@ -1,0 +1,116 @@
+body{
+    background-color: whitesmoke;
+    }
+    
+    div{
+    display: inline-block;
+    
+    }
+    
+    .alles{
+    width: 40%;
+    }
+    
+    img{  
+    float: left;
+    border-radius: 70%;
+    border: 2px solid red
+    }
+    
+    a{
+    text-decoration: none;
+    }
+    
+    p{
+    
+    color:black;
+    font-size: 20px;
+    }
+    
+    #avatar{
+    float:top;
+    }
+    
+    
+    .avatar{
+    float:right;
+    }
+    
+    #name{
+    color: black;
+    border: 2px solid red;
+    border-radius: 8px;
+    margin-left: 80px;
+    font-family: 'BioRhyme Expanded', serif;
+    }
+    
+    .avatarnaam{
+    color:red;
+    font-family: 'BioRhyme Expanded', serif;
+    margin-left:40px;
+    
+    }
+    
+    .bio{
+    font-family: 'Shadows Into Light', cursive;
+    display: inline-block;
+    font-size: 10px;
+    }
+    
+    
+    
+    
+    #defense{
+    font-family: 'Cinzel', serif;
+    color:indigo;
+    }
+    
+    #health{
+    font-family: 'Cinzel', serif;
+    color:red;
+    }
+    
+    
+    
+    #attack{
+    font-family: 'Cinzel', serif;
+    color:goldenrod;
+    }
+    
+    #weapon{
+    font-family: 'Cinzel', serif;
+    color:firebrick;
+    }
+    
+    #armor{
+    font-family: 'Cinzel', serif;
+    color:darkslategray;
+    }
+    
+    .footer{
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    
+    }
+    
+    .footer1{
+    font-size: 20px;
+    margin-top: 200px;
+    margin-left:800px;
+    
+    
+    }
+    
+    h3{
+    display: inline-block;
+    }
+
+    .knop{
+        right:20px;
+        position: absolute;
+        font-size: 60px;
+        color: red;
+        }
+
+        
