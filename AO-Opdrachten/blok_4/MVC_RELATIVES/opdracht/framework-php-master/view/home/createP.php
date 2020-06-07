@@ -1,4 +1,4 @@
-<h1> voeg een medewerker toe</h1>
+<h1> voeg een paard toe</h1>
 <form name ="create" method= "post" action="<?=URL?>/home/storeP">
 name:<input type= "text" name="name">
 leeftijd:<input type= "number" name="leeftijd">
