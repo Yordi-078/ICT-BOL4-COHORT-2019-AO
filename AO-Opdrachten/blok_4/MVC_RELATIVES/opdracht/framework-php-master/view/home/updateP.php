@@ -4,7 +4,7 @@
 
 
 			<tr>
-				<td>Name</td>
+				<td>naam</td>
 				<td><input type="text" name="name" value=<?php echo $name;?>></td>
 			</tr>
 			<tr>
