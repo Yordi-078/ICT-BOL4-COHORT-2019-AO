@@ -1,4 +1,4 @@
-<h1>Persoon wijzigen</h1>
+<h1 class="text-center">Persoon wijzigen</h1>
 	<form name="update" method="post" action="<?=URL?>/student/updateB">
 
 			<tr>

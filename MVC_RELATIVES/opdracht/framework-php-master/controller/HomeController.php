@@ -131,3 +131,6 @@ function updateR(){
     header("Location:" . URL . "home/index");
 
 }
+
+
+?>

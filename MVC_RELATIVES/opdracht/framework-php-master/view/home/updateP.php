@@ -1,10 +1,10 @@
-<h1>Persoon wijzigen</h1>
+<h1 class="text-center">Paard wijzigen</h1>
 
 	<form name="update" method="post" action="<?=URL?>home/updateP">
 
 
 			<tr>
-				<td>Name</td>
+				<td>naam</td>
 				<td><input type="text" name="name" value=<?php echo $name;?>></td>
 			</tr>
 			<tr>

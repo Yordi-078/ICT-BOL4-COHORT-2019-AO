@@ -3,7 +3,7 @@
    $resultsB = getAllBezoekers($conn);
 ?>
 
-<h1> Reserveren</h1>
+<h1 class="text-center"> Reserveren</h1>
 <form name ="create" method= "post" action="<?=URL?>/home/reserveer">
 
 

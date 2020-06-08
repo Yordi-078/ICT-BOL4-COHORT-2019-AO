@@ -1,4 +1,4 @@
-<h1>Persoon wijzigen</h1>
+<h1 class="text-center">Reservering wijzigen</h1>
 <?php 
   $resultsP = getAllPaarden($conn);
   $resultsB = getAllBezoekers($conn);
