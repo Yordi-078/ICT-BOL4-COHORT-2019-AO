@@ -1,4 +1,4 @@
-<h1>Reservering wijzigen</h1>
+<h1 class="text-center">Reservering wijzigen</h1>
 <?php 
   $resultsP = getAllPaarden($conn);
   $resultsB = getAllBezoekers($conn);
@@ -20,7 +20,7 @@ Welke bezoeker gaat met het paar rijden?
 </select>
             <tr>
 				<td>ritjes</td>
-				<td><input type="number" name="ritjes" value=<?php echo $ritjes;?>></td>
+				<td><input type="number" name="ritjes" required value=<?php echo $ritjes;?>></td>
 			</tr>
         
 	    <input type="hidden" name="id" value="<?=$id["id"] ?>"/>

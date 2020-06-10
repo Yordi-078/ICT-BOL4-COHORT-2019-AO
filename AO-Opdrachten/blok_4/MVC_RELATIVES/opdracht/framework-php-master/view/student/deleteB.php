@@ -1,4 +1,7 @@
+
+<div class="text-center">
 <p> Weet je zeker dat je <?= $id['name'] ?> wilt verwijderen?</p>
- <a href="<?= URL ?>/student/index"><button>nee</button></a>
- <a href="<?= URL ?>/student/destroyB/<?= $id['id'] ?>"><button>ja</button></a>
+ <a class="btn btn-info" href="<?= URL ?>/student/index">nee</a>
+ <a class="btn btn-danger" href="<?= URL ?>/student/destroyB/<?= $id['id'] ?>">ja</a>
+ </div>
 

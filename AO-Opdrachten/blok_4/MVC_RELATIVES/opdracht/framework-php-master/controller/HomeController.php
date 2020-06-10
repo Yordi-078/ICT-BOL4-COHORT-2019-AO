@@ -21,10 +21,9 @@ function createP(){
 function storeP(){
     $name = $_POST['name'];
     $leeftijd = $_POST['leeftijd'];
-    $ras = $_POST['ras'];
-    $springsport = $_POST['springsport'];
+    $lengte = $_POST['lengte'];
 
-	 createPaard($name, $leeftijd, $ras, $springsport);
+	 createPaard($name, $leeftijd, $lengte);
 
 	 
 	 header("Location:" . URL . "home/index");
@@ -58,11 +57,11 @@ function updateP(){
     $name=$_POST['name'];
     $leeftijd=$_POST['leeftijd'];
     $ras=$_POST['ras'];
-    $springsport=$_POST['springsport'];
+    $lengte=$_POST['lengte'];
 	$id = $_POST['id'];
 
 
-	updatePaard($name, $leeftijd, $ras, $springsport, $id);
+	updatePaard($name, $leeftijd, $ras, $lengte, $id);
     //2. Bouw een url en redirect hierheen
     header("Location:" . URL . "home/index");
 
@@ -131,3 +130,6 @@ function updateR(){
     header("Location:" . URL . "home/index");
 
 }
+
+
+?>

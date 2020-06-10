@@ -13,13 +13,12 @@ function getAllPaarden()
 	return $query->fetchAll();
 }
 
-function createPaard($name, $leeftijd, $ras, $springsport){
+function createPaard($name, $leeftijd, $lengte){
 	$conn= openDatabaseConnection();
-	$stmt = $conn->prepare("INSERT INTO paarden (name, leeftijd, ras, springsport) VALUES (:name, :leeftijd, :ras, :springsport)");
+	$stmt = $conn->prepare("INSERT INTO paarden (name, leeftijd, lengte) VALUES (:name, :leeftijd, :lengte)");
 	$stmt->bindParam(":name" , $name);
 	$stmt->bindParam(":leeftijd" , $leeftijd);
-	$stmt->bindParam(":ras" , $ras);
-	$stmt->bindParam(":springsport" , $springsport);
+    $stmt->bindParam(":lengte" , $lengte);
 	$stmt->execute();
  }
 
@@ -38,13 +37,13 @@ function deletePaard($id){
     $stmt->execute();
  }
 
- function updatePaard($name, $leeftijd, $id){
+ function updatePaard($name, $leeftijd, $lengte, $id){
     $conn = openDataBaseConnection();
-    $stmt = $conn->prepare("UPDATE paarden SET name=:name, leeftijd=:leeftijd, ras=:ras, springsport=:springsport WHERE id=:id");
+    $stmt = $conn->prepare("UPDATE paarden SET name=:name, leeftijd=:leeftijd, ras=:ras, lengte=:lengte WHERE id=:id");
     $stmt->bindParam(":name" , $name);
 	$stmt->bindParam(":leeftijd" , $leeftijd);
 	$stmt->bindParam(":ras" ,  $ras);
-	$stmt->bindParam(":springsport" , $springsport);
+	$stmt->bindParam(":lengte" , $lengte);
     $stmt->bindParam(":id" , $id);
     $stmt->execute();
     $conn = null;

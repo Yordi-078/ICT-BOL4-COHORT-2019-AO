@@ -1,10 +1,10 @@
-<h1> voeg een medewerker toe</h1>
+<h1 class="text-center"> voeg een bezoeker toe</h1>
 <form name ="create" method= "post" action="<?=URL?>/student/storeB">
-naam:<input type= "text" name="name">
-adres:<input type= "text" name="adres">
-telefoonnummer:<input type= "text" name="telefoonnummer">
-identificatienummer:<input type= "number" name="identificatienummer">
+naam:<input type= "text" class="form-control" name="name"required>
+adres:<input type= "text" class="form-control" name="adres"required>
+telefoonnummer:<input type= "text" class="form-control"  name="telefoonnummer"required>
+identificatienummer:<input type= "number" class="form-control" name="identificatienummer" required>
 
-<input type="submit">
+<input class="btn btn-primary" type="submit">
 
 </form>
