@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Roboto");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto";
+  background-color: gray;
+}
+
+.center-page {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #36b2d8;
+}
+
+li {
+  float: left;
+  background-color: #d3721d;
+  margin: 0px 36px;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 16px 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: white;
+}
+
+header {
+  width: 100%;
+  height: auto;
+}
+
+.grid-container {
+  display: grid;
+  margin-top: 50px;
+  /* grid-template-rows: 100px 100px 100px 100px 100px;
+  grid-template-columns: 200px 200px 200px 200px 200px; */
+
+  grid-template-columns: repeat(5, 1fr 1fr);
+  grid-template-rows: 100px 100px 100px;
+}
+
+.cda {
+  grid-row: 1 / span 4;
+  grid-column: 1 / span 7;
+}
+
+.vvd {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.d66 {
+  grid-row: 5;
+  grid-column: 1;
+}
+
+.pvda {
+  grid-row: 5;
+  grid-column: 2;
+  line-height: 300px;
+}
+
+.tweede-kamerleden {
+  font-family: "Noto Sans";
+  grid-row: 1;
+  grid-column: 1 / span 3;
+  text-align: center;
+  line-height: 100px;
+  background-color: #36b2d8;
+  height: 100px;
+}
+
+.tweede-kamerleden-sybrand {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.tweede-kamerleden-agnes {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.tweede-kamerleden-harry {
+  grid-row: 2;
+  grid-column: 3;
+}
+
+.logo-cda {
+  font-family: "Noto Sans";
+  grid-row: 1;
+  grid-column: 4 / span 7;
+  text-align: center;
+  line-height: 100px;
+  background-color: #d3721d;
+  height: 100px;
+}
+
+.logocda {
+  grid-row: 2;
+  grid-column: 4 / span 5;
+}
+
+.klaas {
+  grid-row: 1 / span 4;
+  grid-column: 1 / span 3;
+}
+
+.jan-remco {
+  grid-row: 1 / span 4;
+  grid-column: 5 / span 6;
+}
+
+.bas {
+  grid-row: 1 / span 4;
+  grid-column: 7 / span 8;
+}
+
+.sophie {
+  grid-row: 5;
+  grid-column: 1 / span 3;
+}
+
+.dilan-judith {
+  grid-row: 5;
+  grid-column: 5 / span 6;
+}
+
+.ockje {
+  grid-row: 5;
+  grid-column: 7 / span 8;
+}
+
+#stemWijzer {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  height: 200px;
+  line-height: 100px;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  background-color: #36b2d8;
+  text-align: center;
+  line-height: 80px;
+  font-weight: bold;
+  height: 80px;
+  margin: 0 auto;
+}
