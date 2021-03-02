@@ -18,13 +18,10 @@ var score2 = document.getElementById("score2");
 var score3 = document.getElementById("score3");
 var scoren = document.getElementById("scorens");
 
-
-
 var questions = 0;
 var pro = 0;
 var geenMening = 0;
 var contra = 0;
-
 
 start.onclick = function(){
   btnPro.style.display = 'inline-block';
@@ -35,8 +32,6 @@ start.onclick = function(){
   title.innerHTML = subjects[0].title;
   statement.innerHTML = subjects[0].statement;
   }
-
-
 
 btnPro.onclick = function(){
   answers[questions] = "pro";
@@ -76,15 +71,13 @@ buttons.onclick = function(){
       }
   }
 
-  function questions0(){
-    if(questions === 1){
-      btnPrevious.style.display = 'none';
-      }else{
-        btnPrevious.style.display = 'inline-block';
+function questions0(){
+  if(questions === 1){
+  btnPrevious.style.display = 'none';
+  }else{
+    btnPrevious.style.display = 'inline-block';
     }
-  }
-
-
+}
 
 btnPrevious.onclick = function(){
   console.log(questions);
@@ -94,36 +87,30 @@ btnPrevious.onclick = function(){
   statement.innerHTML = subjects[questions].statement;
   }
 
-
 btnResult.onclick =function(){
   logo.style.display = 'inline-block';
   btnResult.style.display = 'none'; 
-  for(index = 0; index < answers.length; index++){
-
- var answer = answers[index];
-
- subjects[index].parties.forEach(function(party){
- var partyanswer = party.position;
- if(answer == partyanswer){
-   var correctparty = chosenParty.find(partyName => partyName.name == party.name);
-
-   if(correctparty != null){
-       correctparty.score++;
-  }
-
-}
-    })
-  }
+    for(index = 0; index < answers.length; index++){
+      var answer = answers[index];
+      subjects[index].parties.forEach(function(party){
+      var partyanswer = party.position;
+        if(answer == partyanswer){
+            var correctparty = chosenParty.find(partyName => partyName.name == party.name);
+  	         if(correctparty != null){
+              correctparty.score++;
+              } 
+        }
+        })
+    }
 
   chosenParty.sort(compare);
-
-   scoren.style.display = 'inline-block';
+  scoren.style.display = 'inline-block';
   document.getElementById("p1").innerHTML = chosenParty[chosenParty.length - 1].name;
   document.getElementById("p2").innerHTML = chosenParty[chosenParty.length - 2].name;
   document.getElementById("p3").innerHTML = chosenParty[chosenParty.length - 3].name;
-  document.getElementById("score1").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 1].score;
-  document.getElementById("score2").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 2].score;
-  document.getElementById("score3").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 3].score;
+  document.getElementById("score1").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 1].score + '/' + questions;
+  document.getElementById("score2").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 2].score + '/' + questions;
+  document.getElementById("score3").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 3].score + '/' + questions;
 
   console.log(chosenParty);
 }
