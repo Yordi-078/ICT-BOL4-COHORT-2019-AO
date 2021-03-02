@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stemwijzer</title>
+  </head>
+  <style>
+body{
+  background-image: url("img/background.png");
+  background-size: cover;
+  height: 600px;
+  width: 500px;
+}
+
+.whitebox{
+background-color: white;
+position: absolute;
+  width: 900px;
+  height: 500px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+ }
+
+
+  #logo{
+ width: 400px;
+  }
+
+  h3{
+    width: 400px;
+  }
+
+  #btnEens{
+    background-color:black; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  }
+  #btnMening{
+    background-color:black; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  }
+
+  #btnOneens{
+    background-color:black; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  }
+
+  
+  #btnPrevious{
+    margin-top: 200px;
+    width: 40px;
+    height: 40px;
+    background-color: #f1f1f1;
+  color: black;
+  border-radius: 50%;
+  }
+  
+
+
+  #resultaat{
+    margin-left: auto;
+    background-color:black; /* Green */
+  border: none;
+  color: white;
+  padding: 40px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 170px 350px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  }
+
+  #start{
+    background-color:#45c5e4; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  }
+
+
+.column {
+  float: left;
+  width: 200px;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+#scorens {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+  
+  </style>
+  <body>
+  <div class="whitebox">
+    <div id="stemWijzer">
+      <div id="kpartij">
+        <p></p> </div>  
+      <img id="logo" src="img/stemwijzer.png">
+
+        <h2 id="title">Stemwijzer Tweede Kamer 2021</h2>
+        <p id="statement"></p>
+        <button id="start">Start</button>
+        <div id="buttons">
+          <button style="display: none;"  id="btnEens">EENS</button>
+          <button style="display: none;"  id="btnMening">GEEN MENING</button>
+          <button style="display: none;"  id="btnOneens">ONEENS</button>
+        </div>
+          <button style="display: none;"  id="btnPrevious">&#8249;</button> 
+          <button style="display: none;"  id="resultaat" >Resultaat</button>
+      </div>
+
+      <div style="display: none;" id="scorens">
+       <H2 style="margin-left: 5px;">Dit zijn de 3 partijen die het beste bij u passen!</H2>
+        <div class="column">
+          <div class="card">
+            <h4  id="p1">1</h4>
+            <p id="score1">score</p>
+          </div>
+        </div>
+      
+        <div  class="column">
+          <div class="card">     
+           <h4 id="p2">2</h4>
+           <p id="score2">score</p>
+          </div>
+        </div>
+        
+        <div  class="column">
+          <div class="card">
+            <h4 id="p3">3</h4>
+            <p id="score3">score</p>
+          </div>
+        </div>
+  
+      <footer>
+      </footer>
+    </div>
+  </body>
+  <script src="stemwijzer.js"></script>
+  <script src="data.js"></script>
+</html>
+
