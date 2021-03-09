@@ -79,7 +79,6 @@ position: absolute;
 
   
   #btnPrevious{
-    margin-top: 200px;
     width: 40px;
     height: 40px;
     background-color: #f1f1f1;
@@ -158,6 +157,7 @@ position: absolute;
         <p></p> </div>  
       <img id="logo" src="img/stemwijzer.png">
 
+      <button style="display: none;"  id="btnPrevious">&#8249;</button> 
         <h2 id="title">Stemwijzer Tweede Kamer 2021</h2>
         <p id="statement"></p>
         <button id="start">Start</button>
@@ -166,7 +166,7 @@ position: absolute;
           <button style="display: none;"  id="btnMening">GEEN MENING</button>
           <button style="display: none;"  id="btnOneens">ONEENS</button>
         </div>
-          <button style="display: none;"  id="btnPrevious">&#8249;</button> 
+        <button style="display: none;"  id="btnNext" >Volgende vraag</button>
           <button style="display: none;"  id="resultaat" >Resultaat</button>
       </div>
 
@@ -197,7 +197,8 @@ position: absolute;
       </footer>
     </div>
   </body>
-  <script src="stemwijzer.js"></script>
-  <script src="data.js"></script>
+  <!-- <script src="data.js"></script> -->
+ <script src="http://stemwijzer.dvc-icta.nl/data.js"></script> 
+ <script src="stemwijzer.js"></script>
 </html>
 

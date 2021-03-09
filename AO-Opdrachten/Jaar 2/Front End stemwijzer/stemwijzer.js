@@ -1,3 +1,6 @@
+var answers = []
+
+var chosenParty = []
 
 var title = document.getElementById("title");
 var logo = document.getElementById("logo");
@@ -27,6 +30,7 @@ start.onclick = function(){
   btnPro.style.display = 'inline-block';
   btnContra.style.display = 'inline-block';
   btnMening.style.display = 'inline-block';
+  btnNext.style.display = 'inline-block';
   btnStart.style.display = 'none'; 
   logo.style.display = 'none';
   title.innerHTML = subjects[0].title;
@@ -51,10 +55,22 @@ btnContra.onclick = function(){
   console.log(answers);
   }
 
+btnNext.onclick = function(){
+  console.log(answers);
+  questions++
+  title.innerHTML = subjects[questions].title;
+  statement.innerHTML = subjects[questions].statement;
+  questions0();
+  setColor();
+}
 
-buttons.onclick = function(){
+
+buttons.onclick = function(){ 
   console.log(questions);
   questions0();
+  if( questions === subjects.length -2){
+    btnNext.style.display = 'none';
+  }
   if( questions === subjects.length -1){
     title.style.display = 'none';
     statement.style.display = 'none';
@@ -62,13 +78,16 @@ buttons.onclick = function(){
     btnContra.style.display = 'none';
     btnMening.style.display = 'none';
     btnPrevious.style.display = 'none';
+    btnNext.style.display = 'none';
     btnResult.style.display = 'inline-block'; 
     }
-    else{ 
+    else{
+      questions0();
       questions++
       title.innerHTML = subjects[ questions].title;
       statement.innerHTML = subjects[ questions].statement;
       }
+      setColor();
   }
 
 function questions0(){
@@ -80,12 +99,14 @@ function questions0(){
 }
 
 btnPrevious.onclick = function(){
-  console.log(questions);
   questions0();
   questions--
   title.innerHTML = subjects[questions].title;
   statement.innerHTML = subjects[questions].statement;
+  setColor();
   }
+
+
 
 btnResult.onclick =function(){
   logo.style.display = 'inline-block';
@@ -127,6 +148,34 @@ function compare(a , b){
   }
 }
 
+function partyArray(){
+  for(index = 0; index < parties.length; index++){
+  chosenParty[index] = {score: 0, name: parties[index].name}
+  // console.log(chosenParty);
+  }
+}
+
+partyArray();
+
+
+function setColor(){
+  btnPro.style.background = 'black';
+  btnMening.style.background = 'black';
+  btnContra.style.background = 'black';
+  console.log(questions);
+  if(answers[questions] == "pro"){
+    btnPro.style.background = 'red';
+   }else if(answers[questions] == "geen mening"){
+    btnMening.style.background = 'red';
+   }else if(answers[questions] == "contra"){
+    btnContra.style.background = 'red';
+   }else{
+    console.log("doei");
+    btnPro.style.background = 'black';
+    btnMening.style.background = 'black';
+    btnContra.style.background = 'black';
+   }
+}
 
 
 
