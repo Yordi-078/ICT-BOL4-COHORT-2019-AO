@@ -2,6 +2,9 @@ var answers = []
 
 var chosenParty = []
 
+var partiesOnlyNames = []
+
+
 var title = document.getElementById("title");
 var logo = document.getElementById("logo");
 var statement = document.getElementById("statement");
@@ -12,6 +15,10 @@ var btnStart = document.getElementById("start");
 var btnResult =  document.getElementById("resultaat");
 var btnPrevious =  document.getElementById("btnPrevious");
 var btnNext = document.getElementById("btnNext");
+var showPartiesCheck = document.getElementById("showPartiesCheck");
+var checkedResult = document.getElementById("checkedResult");
+
+
 
 var p1 = document.getElementById("p1");
 var p2 = document.getElementById("p2");
@@ -60,14 +67,14 @@ btnNext.onclick = function(){
   questions++
   title.innerHTML = subjects[questions].title;
   statement.innerHTML = subjects[questions].statement;
-  questions0();
+  hidePreviousButton();
   setColor();
 }
 
 
 buttons.onclick = function(){ 
   console.log(questions);
-  questions0();
+  hidePreviousButton();
   if( questions === subjects.length -2){
     btnNext.style.display = 'none';
   }
@@ -79,10 +86,10 @@ buttons.onclick = function(){
     btnMening.style.display = 'none';
     btnPrevious.style.display = 'none';
     btnNext.style.display = 'none';
+    showPartiesCheck.style.display = 'inline-block';
     btnResult.style.display = 'inline-block'; 
     }
     else{
-      questions0();
       questions++
       title.innerHTML = subjects[ questions].title;
       statement.innerHTML = subjects[ questions].statement;
@@ -90,7 +97,7 @@ buttons.onclick = function(){
       setColor();
   }
 
-function questions0(){
+function hidePreviousButton(){
   if(questions === 1){
   btnPrevious.style.display = 'none';
   }else{
@@ -99,7 +106,7 @@ function questions0(){
 }
 
 btnPrevious.onclick = function(){
-  questions0();
+  hidePreviousButton();
   questions--
   title.innerHTML = subjects[questions].title;
   statement.innerHTML = subjects[questions].statement;
@@ -111,6 +118,7 @@ btnPrevious.onclick = function(){
 btnResult.onclick =function(){
   logo.style.display = 'inline-block';
   btnResult.style.display = 'none'; 
+  showPartiesCheck.style.display = 'none'; 
     for(index = 0; index < answers.length; index++){
       var answer = answers[index];
       subjects[index].parties.forEach(function(party){
@@ -126,12 +134,23 @@ btnResult.onclick =function(){
 
   chosenParty.sort(compare);
   scoren.style.display = 'inline-block';
-  document.getElementById("p1").innerHTML = chosenParty[chosenParty.length - 1].name;
-  document.getElementById("p2").innerHTML = chosenParty[chosenParty.length - 2].name;
-  document.getElementById("p3").innerHTML = chosenParty[chosenParty.length - 3].name;
-  document.getElementById("score1").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 1].score + '/' + questions;
-  document.getElementById("score2").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 2].score + '/' + questions;
-  document.getElementById("score3").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 3].score + '/' + questions;
+  for(index = 0; index < chosenParty.length; index++){
+  var namePartie = document.getElementById("p");
+  var namePartieText = document.createElement("p");
+  namePartieText.innerHTML = chosenParty[index].name;
+  namePartie.appendChild(namePartieText);
+
+  var scorens = document.getElementById("score");
+  var score = document.createElement("p");
+  score.innerHTML = chosenParty[index].score +  '/' + questions;
+  scorens.appendChild(score);
+  }
+  // document.getElementById("p1").innerHTML = chosenParty[chosenParty.length - 1].name;
+  // document.getElementById("p2").innerHTML = chosenParty[chosenParty.length - 2].name;
+  // document.getElementById("p3").innerHTML = chosenParty[chosenParty.length - 3].name;
+  // document.getElementById("score1").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 1].score + '/' + questions;
+  // document.getElementById("score2").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 2].score + '/' + questions;
+  // document.getElementById("score3").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 3].score + '/' + questions;
 
   console.log(chosenParty);
 }
@@ -148,23 +167,27 @@ function compare(a , b){
   }
 }
 
-function partyArray(){
-  for(index = 0; index < parties.length; index++){
-  chosenParty[index] = {score: 0, name: parties[index].name}
-  // console.log(chosenParty);
-  }
-}
+//  function partyArray(){
+//   for(index = 0; index < parties.length; index++){
+//    chosenParty[index] = {score: 0, name: parties[index].name}
+//     console.log(chosenParty);
+//    }
+//  }
 
-partyArray();
+//  partyArray();
+
+
 
 
 function setColor(){
   btnPro.style.background = 'black';
   btnMening.style.background = 'black';
   btnContra.style.background = 'black';
+  // btnContra.classList.remove('chosen');
   console.log(questions);
   if(answers[questions] == "pro"){
     btnPro.style.background = '#45c5e4';
+    // btnPro.classList.add('chosen');
    }else if(answers[questions] == "geen mening"){
     btnMening.style.background = '#45c5e4';
    }else if(answers[questions] == "contra"){
@@ -176,9 +199,31 @@ function setColor(){
    }
 }
 
+function ShowPartiesCheck(){
+for(index = 0; index < parties.length; index++){
+  var checkBox = document.createElement("INPUT");
+  checkBox.setAttribute("type", "checkbox");
+  checkBox.checked = true;
+  checkBox.className = "checkBox"
+  var partieCheck = document.getElementById("partie");
+  var partiesCheckText = document.createElement("p");
+  partiesCheckText.innerHTML = parties[index].name;
+  partieCheck.appendChild(partiesCheckText);
+  partieCheck.appendChild(checkBox); 
+}
+}
+ShowPartiesCheck();
 
+checkedResult.onclick = function(){
+var partieAnswers = document.getElementsByClassName("checkBox");
+i=0;
+for(index = 0; index < parties.length; index++){
+ if (partieAnswers[index].checked == true){
+    chosenParty[i] = {score: 0, name: parties[i].name}
+    i++;
+    } else {
+      console.log('nee');
+      }
+}
+}
 
-
-
-
-  
