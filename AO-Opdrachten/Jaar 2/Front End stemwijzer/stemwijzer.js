@@ -164,18 +164,19 @@ function setColor(){
   btnContra.style.background = 'black';
   console.log(questions);
   if(answers[questions] == "pro"){
-    btnPro.style.background = 'red';
+    btnPro.style.background = '#45c5e4';
    }else if(answers[questions] == "geen mening"){
-    btnMening.style.background = 'red';
+    btnMening.style.background = '#45c5e4';
    }else if(answers[questions] == "contra"){
-    btnContra.style.background = 'red';
+    btnContra.style.background = '#45c5e4';
    }else{
-    console.log("doei");
     btnPro.style.background = 'black';
     btnMening.style.background = 'black';
     btnContra.style.background = 'black';
    }
 }
+
+
 
 
 

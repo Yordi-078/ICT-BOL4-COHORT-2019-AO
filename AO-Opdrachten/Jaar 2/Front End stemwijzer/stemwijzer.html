@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <meta charset="UTF-8" />
     <title>Stemwijzer</title>
   </head>
@@ -79,11 +80,8 @@ position: absolute;
 
   
   #btnPrevious{
-    width: 40px;
-    height: 40px;
-    background-color: #f1f1f1;
-  color: black;
-  border-radius: 50%;
+    float: left;
+    font-size: 50px;
   }
   
 
@@ -148,6 +146,11 @@ position: absolute;
   text-align: center;
   background-color: #f1f1f1;
 }
+
+#btnNext{
+  font-size: 50px;
+  float: right;
+}
   
   </style>
   <body>
@@ -156,8 +159,6 @@ position: absolute;
       <div id="kpartij">
         <p></p> </div>  
       <img id="logo" src="img/stemwijzer.png">
-
-      <button style="display: none;"  id="btnPrevious">&#8249;</button> 
         <h2 id="title">Stemwijzer Tweede Kamer 2021</h2>
         <p id="statement"></p>
         <button id="start">Start</button>
@@ -166,9 +167,12 @@ position: absolute;
           <button style="display: none;"  id="btnMening">GEEN MENING</button>
           <button style="display: none;"  id="btnOneens">ONEENS</button>
         </div>
-        <button style="display: none;"  id="btnNext" >Volgende vraag</button>
           <button style="display: none;"  id="resultaat" >Resultaat</button>
       </div>
+
+      <i style="display: none;"  id="btnPrevious" class="fas fa-arrow-left"></i>
+      <i style="display: none;"  id="btnNext" class="fas fa-arrow-right"></i>
+      
 
       <div style="display: none;" id="scorens">
        <H2 style="margin-left: 5px;">Dit zijn de 3 partijen die het beste bij u passen!</H2>
@@ -192,6 +196,7 @@ position: absolute;
             <p id="score3">score</p>
           </div>
         </div>
+
   
       <footer>
       </footer>
