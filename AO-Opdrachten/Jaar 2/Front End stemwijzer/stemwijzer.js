@@ -17,6 +17,8 @@ var btnPrevious =  document.getElementById("btnPrevious");
 var btnNext = document.getElementById("btnNext");
 var showPartiesCheck = document.getElementById("showPartiesCheck");
 var checkedResult = document.getElementById("checkedResult");
+var extraScore = document.getElementById("extraScore");
+var thesesResult = document.getElementById("thesesResult");
 
 
 
@@ -87,7 +89,6 @@ buttons.onclick = function(){
     btnPrevious.style.display = 'none';
     btnNext.style.display = 'none';
     showPartiesCheck.style.display = 'inline-block';
-    btnResult.style.display = 'inline-block'; 
     }
     else{
       questions++
@@ -132,25 +133,19 @@ btnResult.onclick =function(){
         })
     }
 
+ 
+
   chosenParty.sort(compare);
   scoren.style.display = 'inline-block';
-  for(index = 0; index < chosenParty.length; index++){
-  var namePartie = document.getElementById("p");
-  var namePartieText = document.createElement("p");
-  namePartieText.innerHTML = chosenParty[index].name;
-  namePartie.appendChild(namePartieText);
 
-  var scorens = document.getElementById("score");
-  var score = document.createElement("p");
-  score.innerHTML = chosenParty[index].score +  '/' + questions;
-  scorens.appendChild(score);
+  for(index = chosenParty.length -1; index > -1 ; index--){
+    var partieNames = document.getElementById("partynames");
+    var nameTextPartie = document.createElement("p");
+    nameTextPartie.innerHTML = chosenParty[index].name +  '  ' + 'Score:' + chosenParty[index].score +  '/' + questions;
+    partieNames.appendChild(nameTextPartie);
+
+    partieNames.className = "scorens2";
   }
-  // document.getElementById("p1").innerHTML = chosenParty[chosenParty.length - 1].name;
-  // document.getElementById("p2").innerHTML = chosenParty[chosenParty.length - 2].name;
-  // document.getElementById("p3").innerHTML = chosenParty[chosenParty.length - 3].name;
-  // document.getElementById("score1").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 1].score + '/' + questions;
-  // document.getElementById("score2").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 2].score + '/' + questions;
-  // document.getElementById("score3").innerHTML = 'Score: ' +  chosenParty[chosenParty.length - 3].score + '/' + questions;
 
   console.log(chosenParty);
 }
@@ -166,18 +161,6 @@ function compare(a , b){
     return 1;
   }
 }
-
-//  function partyArray(){
-//   for(index = 0; index < parties.length; index++){
-//    chosenParty[index] = {score: 0, name: parties[index].name}
-//     console.log(chosenParty);
-//    }
-//  }
-
-//  partyArray();
-
-
-
 
 function setColor(){
   btnPro.style.background = 'black';
@@ -204,12 +187,16 @@ for(index = 0; index < parties.length; index++){
   var checkBox = document.createElement("INPUT");
   checkBox.setAttribute("type", "checkbox");
   checkBox.checked = true;
-  checkBox.className = "checkBox"
+
   var partieCheck = document.getElementById("partie");
   var partiesCheckText = document.createElement("p");
+
   partiesCheckText.innerHTML = parties[index].name;
-  partieCheck.appendChild(partiesCheckText);
-  partieCheck.appendChild(checkBox); 
+  partieCheck.appendChild(checkBox);
+  partieCheck.appendChild(partiesCheckText); 
+
+  partiesCheckText.className = "text";
+  checkBox.className = "checkBox";
 }
 }
 ShowPartiesCheck();
@@ -219,11 +206,46 @@ var partieAnswers = document.getElementsByClassName("checkBox");
 i=0;
 for(index = 0; index < parties.length; index++){
  if (partieAnswers[index].checked == true){
-    chosenParty[i] = {score: 0, name: parties[i].name}
+    chosenParty[i] = {score: 0, name: parties[index].name}
     i++;
     } else {
       console.log('nee');
       }
 }
+showPartiesCheck.style.display = 'none';
+extraScore.style.display = 'inline-block'
+console.log(chosenParty);
+
+extraScore2();
+// btnResult.style.display = 'inline-block'; 
+
 }
 
+function extraScore2(){
+  for(index = 0; index < parties.length; index++){
+    var checkBox = document.createElement("INPUT");
+    checkBox.setAttribute("type", "checkbox");
+  
+    var theses = document.getElementById("theses");
+    var thesesText = document.createElement("p");
+  
+    thesesText.innerHTML = subjects[index].title;
+    theses.appendChild(checkBox);
+    theses.appendChild(thesesText); 
+  
+    thesesText.className = "text";
+    checkBox.className = "checkBoxTheses";
+  }
+  }
+
+  thesesResult.onclick = function(){
+    var thesesAnswers = document.getElementsByClassName("checkBoxTheses");
+    for(index = 0; index < parties.length; index++){
+      if (thesesAnswers[index].checked == true){
+       
+      }else{
+        console.log('doei')
+      }
+    }
+    btnResult.style.display = 'inline-block';     
+  }

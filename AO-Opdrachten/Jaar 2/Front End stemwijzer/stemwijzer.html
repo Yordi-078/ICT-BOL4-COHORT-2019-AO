@@ -133,6 +133,44 @@ position: absolute;
   float: right;
 }
 
+.checkBox{
+  margin-right: 5px;
+  display: inline-block;
+
+}
+
+.text{
+  width: 200px;
+ margin-right: 5px;
+  display: inline-block;
+}
+
+#showPartiesCheck{
+  display: none;
+  width: 100%;
+  border: 1px solid black;
+  background-color: lightgray;
+}
+
+#scorens{
+  border: 1px solid black;
+  background-color: white;
+  width: 100%;
+  height: 400px;
+  overflow: scroll;
+}
+
+.scorens2{
+margin-left: 10px;
+}
+
+#extraScore{
+  display: none;
+  width: 100%;
+  border: 1px solid black;
+  background-color: lightgray;
+}
+
 
   
   </style>
@@ -151,10 +189,15 @@ position: absolute;
           <button style="display: none;"  id="btnOneens">ONEENS</button>
         </div>
 
-        <div style="display: none;" id="showPartiesCheck">
+         <div id="showPartiesCheck"> 
           <div id="partie"></div>
           <button id="checkedResult">Check</button>
-        </div>
+         </div> 
+
+         <div id="extraScore">
+          <div id="theses"></div>
+          <button id="thesesResult">Check</button>
+         </div>
 
         <button style="display: none;"  id="resultaat" >Resultaat</button>
 
@@ -165,41 +208,9 @@ position: absolute;
       
 
       <div style="display: none;" id="scorens">
-        <div class="column">
-          <div class="card">
-            <h4  id="p">1</h4>
-            <p id="score">score</p>
-          </div>
-        </div>
-       <!-- <H2 style="margin-left: 5px;">Dit zijn de 3 partijen die het beste bij u passen!</H2>
-         <div class="column">
-          <div class="card">
-            <h4  id="p">1</h4>
-            <p id="score">score</p>
-          </div>
-        </div> -->
-        <!-- <div class="column">
-          <div class="card">
-            <h4  id="p1">1</h4>
-            <p id="score1">score</p>
-          </div>
-        </div>
-      
-        <div  class="column">
-          <div class="card">     
-           <h4 id="p2">2</h4>
-           <p id="score2">score</p>
-          </div>
-        </div>
-        
-        <div  class="column">
-          <div class="card">
-            <h4 id="p3">3</h4>
-            <p id="score3">score</p>
-          </div>
-        </div> -->
-        </div>
-
+          <div id="partynames"></div>
+      </div>
+       
 
 
   
