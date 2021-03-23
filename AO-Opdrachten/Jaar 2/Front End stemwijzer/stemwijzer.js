@@ -4,7 +4,6 @@ var chosenParty = []
 
 var partiesOnlyNames = []
 
-
 var title = document.getElementById("title");
 var logo = document.getElementById("logo");
 var statement = document.getElementById("statement");
@@ -12,15 +11,12 @@ var btnPro = document.getElementById("btnEens");
 var btnMening = document.getElementById("btnMening");
 var btnContra = document.getElementById("btnOneens");
 var btnStart = document.getElementById("start");
-var btnResult =  document.getElementById("resultaat");
 var btnPrevious =  document.getElementById("btnPrevious");
 var btnNext = document.getElementById("btnNext");
 var showPartiesCheck = document.getElementById("showPartiesCheck");
 var checkedResult = document.getElementById("checkedResult");
 var extraScore = document.getElementById("extraScore");
 var thesesResult = document.getElementById("thesesResult");
-
-
 
 var p1 = document.getElementById("p1");
 var p2 = document.getElementById("p2");
@@ -73,7 +69,6 @@ btnNext.onclick = function(){
   setColor();
 }
 
-
 buttons.onclick = function(){ 
   console.log(questions);
   hidePreviousButton();
@@ -89,21 +84,21 @@ buttons.onclick = function(){
     btnPrevious.style.display = 'none';
     btnNext.style.display = 'none';
     showPartiesCheck.style.display = 'inline-block';
-    }
-    else{
-      questions++
-      title.innerHTML = subjects[ questions].title;
-      statement.innerHTML = subjects[ questions].statement;
-      }
-      setColor();
   }
+  else{
+    questions++
+    title.innerHTML = subjects[ questions].title;
+    statement.innerHTML = subjects[ questions].statement;
+  }
+  setColor();
+}
 
 function hidePreviousButton(){
   if(questions === 1){
-  btnPrevious.style.display = 'none';
+    btnPrevious.style.display = 'none';
   }else{
     btnPrevious.style.display = 'inline-block';
-    }
+  }
 }
 
 btnPrevious.onclick = function(){
@@ -112,41 +107,26 @@ btnPrevious.onclick = function(){
   title.innerHTML = subjects[questions].title;
   statement.innerHTML = subjects[questions].statement;
   setColor();
-  }
+}
 
-
-
-btnResult.onclick =function(){
+function result(){
   logo.style.display = 'inline-block';
-  btnResult.style.display = 'none'; 
   showPartiesCheck.style.display = 'none'; 
-    for(index = 0; index < answers.length; index++){
-      var answer = answers[index];
-      subjects[index].parties.forEach(function(party){
-      var partyanswer = party.position;
-        if(answer == partyanswer){
-            var correctparty = chosenParty.find(partyName => partyName.name == party.name);
-  	         if(correctparty != null){
-              correctparty.score++;
-              } 
-        }
-        })
-    }
 
- 
+ for(index = 0; index < answers.length; index++){
+   scoreplus(index);
+ }
 
   chosenParty.sort(compare);
   scoren.style.display = 'inline-block';
 
-  for(index = chosenParty.length -1; index > -1 ; index--){
+ for(index = chosenParty.length -1; index > -1 ; index--){
     var partieNames = document.getElementById("partynames");
     var nameTextPartie = document.createElement("p");
-    nameTextPartie.innerHTML = chosenParty[index].name +  '  ' + 'Score:' + chosenParty[index].score +  '/' + questions;
+    nameTextPartie.innerHTML = chosenParty[index].name +  '  ' + 'Score:' + chosenParty[index].score ;
     partieNames.appendChild(nameTextPartie);
-
     partieNames.className = "scorens2";
   }
-
   console.log(chosenParty);
 }
  
@@ -166,15 +146,17 @@ function setColor(){
   btnPro.style.background = 'black';
   btnMening.style.background = 'black';
   btnContra.style.background = 'black';
-  // btnContra.classList.remove('chosen');
+  // btnContra.classList.remove('color');
   console.log(questions);
   if(answers[questions] == "pro"){
-    btnPro.style.background = '#45c5e4';
-    // btnPro.classList.add('chosen');
+    // btnPro.style.background = '#45c5e4';
+     btnPro.classList.add('color');
    }else if(answers[questions] == "geen mening"){
-    btnMening.style.background = '#45c5e4';
+    // btnMening.style.background = '#45c5e4';
+    btnPro.classList.add('color');
    }else if(answers[questions] == "contra"){
-    btnContra.style.background = '#45c5e4';
+    // btnContra.style.background = '#45c5e4';
+    btnPro.classList.add('color');
    }else{
     btnPro.style.background = 'black';
     btnMening.style.background = 'black';
@@ -183,42 +165,40 @@ function setColor(){
 }
 
 function ShowPartiesCheck(){
-for(index = 0; index < parties.length; index++){
-  var checkBox = document.createElement("INPUT");
-  checkBox.setAttribute("type", "checkbox");
-  checkBox.checked = true;
+  for(index = 0; index < parties.length; index++){
+    var checkBox = document.createElement("INPUT");
+    checkBox.setAttribute("type", "checkbox");
+    checkBox.checked = true;
 
-  var partieCheck = document.getElementById("partie");
-  var partiesCheckText = document.createElement("p");
+    var partieCheck = document.getElementById("partie");
+    var partiesCheckText = document.createElement("p");
 
-  partiesCheckText.innerHTML = parties[index].name;
-  partieCheck.appendChild(checkBox);
-  partieCheck.appendChild(partiesCheckText); 
+    partiesCheckText.innerHTML = parties[index].name;
+    partieCheck.appendChild(checkBox);
+    partieCheck.appendChild(partiesCheckText); 
 
-  partiesCheckText.className = "text";
-  checkBox.className = "checkBox";
-}
+    partiesCheckText.className = "text";
+    checkBox.className = "checkBox";
+  }
 }
 ShowPartiesCheck();
 
 checkedResult.onclick = function(){
-var partieAnswers = document.getElementsByClassName("checkBox");
-i=0;
-for(index = 0; index < parties.length; index++){
- if (partieAnswers[index].checked == true){
-    chosenParty[i] = {score: 0, name: parties[index].name}
-    i++;
+  var partieAnswers = document.getElementsByClassName("checkBox");
+  i=0;
+  for(index = 0; index < parties.length; index++){
+    if (partieAnswers[index].checked == true){
+      chosenParty[i] = {score: 0, name: parties[index].name}
+      i++;
     } else {
       console.log('nee');
-      }
-}
-showPartiesCheck.style.display = 'none';
-extraScore.style.display = 'inline-block'
-console.log(chosenParty);
+    }
+  }
+  showPartiesCheck.style.display = 'none';
+  extraScore.style.display = 'inline-block'
+  console.log(chosenParty);
 
-extraScore2();
-// btnResult.style.display = 'inline-block'; 
-
+  extraScore2();
 }
 
 function extraScore2(){
@@ -233,19 +213,33 @@ function extraScore2(){
     theses.appendChild(checkBox);
     theses.appendChild(thesesText); 
   
-    thesesText.className = "text";
+    thesesText.className = "text2";
     checkBox.className = "checkBoxTheses";
   }
-  }
+}
 
-  thesesResult.onclick = function(){
-    var thesesAnswers = document.getElementsByClassName("checkBoxTheses");
-    for(index = 0; index < parties.length; index++){
-      if (thesesAnswers[index].checked == true){
-       
-      }else{
-        console.log('doei')
-      }
+thesesResult.onclick = function(){
+  var thesesAnswers = document.getElementsByClassName("checkBoxTheses");
+  for(index = 0; index < parties.length; index++){
+    if (thesesAnswers[index].checked == true){
+      scoreplus(index);
     }
-    btnResult.style.display = 'inline-block';     
-  }
+    }
+  
+  extraScore.style.display = 'none';
+  result()
+  console.log(chosenParty);
+}
+
+function scoreplus(index){
+  var answer = answers[index];
+  subjects[index].parties.forEach(function(party){
+  var partyanswer = party.position;
+    if(answer == partyanswer){
+        var correctparty = chosenParty.find(partyName => partyName.name == party.name);
+          if(correctparty != null){
+          correctparty.score++;
+          } 
+    }
+  })
+}

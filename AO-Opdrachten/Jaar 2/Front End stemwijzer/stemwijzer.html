@@ -28,11 +28,17 @@ position: absolute;
 
 
   #logo{
+    margin-left: 50px;
  width: 400px;
   }
 
   h3{
+    margin-left: 50px;
     width: 400px;
+  }
+
+  #buttons{
+    margin-left: 50px;
   }
 
   #btnEens{
@@ -85,6 +91,9 @@ position: absolute;
     font-size: 50px;
   }
   
+  #statement{
+    margin-left: 50px;
+  }
 
 
   #resultaat{
@@ -103,16 +112,51 @@ position: absolute;
   border-radius: 10px;
   }
 
+  #title{
+    margin-left: 50px;
+  }
+
   #start{
-    background-color:#45c5e4; /* Green */
+  float: right;
+  background-color:#45c5e4; /* Green */
   border: none;
-  color: white;
+  color: black;
   padding: 12px 14px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin-right: 50px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  }
+
+  #thesesResult{
+  background-color:#45c5e4; /* Green */
+  border: none;
+  color: black;
+  padding: 12px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 50px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  }
+
+  #checkedResult{
+  background-color:#45c5e4; /* Green */
+  border: none;
+  color: black;
+  padding: 12px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 50px;
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 10px;
@@ -145,15 +189,18 @@ position: absolute;
   display: inline-block;
 }
 
+.text2{
+  width: 280px;
+ margin-right: 5px;
+  display: inline-block;
+}
+
 #showPartiesCheck{
   display: none;
   width: 100%;
-  border: 1px solid black;
-  background-color: lightgray;
 }
 
 #scorens{
-  border: 1px solid black;
   background-color: white;
   width: 100%;
   height: 400px;
@@ -167,8 +214,10 @@ margin-left: 10px;
 #extraScore{
   display: none;
   width: 100%;
-  border: 1px solid black;
-  background-color: lightgray;
+}
+
+.color{
+  background-color: #45c5e4;
 }
 
 
@@ -191,16 +240,13 @@ margin-left: 10px;
 
          <div id="showPartiesCheck"> 
           <div id="partie"></div>
-          <button id="checkedResult">Check</button>
+          <button id="checkedResult">Verstuur</button>
          </div> 
 
          <div id="extraScore">
           <div id="theses"></div>
-          <button id="thesesResult">Check</button>
+          <button id="thesesResult">Verstuur/Resultaat</button>
          </div>
-
-        <button style="display: none;"  id="resultaat" >Resultaat</button>
-
       </div>
 
       <i style="display: none;"  id="btnPrevious" class="fas fa-arrow-left"></i>
@@ -210,16 +256,13 @@ margin-left: 10px;
       <div style="display: none;" id="scorens">
           <div id="partynames"></div>
       </div>
-       
 
-
-  
       <footer>
       </footer>
     </div>
   </body>
   <!-- <script src="data.js"></script> -->
- <script src="http://stemwijzer.dvc-icta.nl/testdata.js"></script> 
+ <script src="http://stemwijzer.dvc-icta.nl/data.js"></script> 
  <script src="stemwijzer.js"></script>
 </html>
 
