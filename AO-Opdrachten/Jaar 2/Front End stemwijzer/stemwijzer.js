@@ -146,17 +146,15 @@ function setColor(){
   btnPro.style.background = 'black';
   btnMening.style.background = 'black';
   btnContra.style.background = 'black';
-  // btnContra.classList.remove('color');
+  // btnContra.classList.remove('chosen');
   console.log(questions);
   if(answers[questions] == "pro"){
-    // btnPro.style.background = '#45c5e4';
-     btnPro.classList.add('color');
+    btnPro.style.background = '#45c5e4';
+    // btnPro.classList.add('chosen');
    }else if(answers[questions] == "geen mening"){
-    // btnMening.style.background = '#45c5e4';
-    btnPro.classList.add('color');
+    btnMening.style.background = '#45c5e4';
    }else if(answers[questions] == "contra"){
-    // btnContra.style.background = '#45c5e4';
-    btnPro.classList.add('color');
+    btnContra.style.background = '#45c5e4';
    }else{
     btnPro.style.background = 'black';
     btnMening.style.background = 'black';
@@ -185,23 +183,22 @@ ShowPartiesCheck();
 
 checkedResult.onclick = function(){
   var partieAnswers = document.getElementsByClassName("checkBox");
-  i=0;
+  // i=0;
   for(index = 0; index < parties.length; index++){
     if (partieAnswers[index].checked == true){
-      chosenParty[i] = {score: 0, name: parties[index].name}
-      i++;
-    } else {
-      console.log('nee');
-    }
+      // chosenParty[i] = {score: 0, name: parties[index].name}
+      // i++;
+      chosenParty.push({score: 0, name: parties[index].name})
+    } 
   }
   showPartiesCheck.style.display = 'none';
   extraScore.style.display = 'inline-block'
   console.log(chosenParty);
 
-  extraScore2();
+  addCheckExtraScore();
 }
 
-function extraScore2(){
+function addCheckExtraScore(){
   for(index = 0; index < parties.length; index++){
     var checkBox = document.createElement("INPUT");
     checkBox.setAttribute("type", "checkbox");
