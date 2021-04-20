@@ -11,6 +11,13 @@ class Attack
         $this->damage = $attack_damage;
     }
 
+    public function __toString() {
+        return json_encode($this);
+    }
+
+
 }
+
+
 
 ?>

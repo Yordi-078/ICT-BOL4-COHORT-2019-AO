@@ -1,5 +1,4 @@
 <?php 
-
 class Pokemon{
 
     public $name;
@@ -26,6 +25,16 @@ class Pokemon{
         return json_encode($this);
     }
 
+    public function attack($attackpokemon, $attack, $pokemon){
+        echo $this->name . " valt " . $pokemon->name . " aan met de " . $attack->name;
+
+        $this->damage($attack->damage, $pokemon);
+    }
+
+    public function damage($damage , $pokemon){
+        echo "<br>" . $damage;
+        echo $pokemon;
+    }
 
 }
 

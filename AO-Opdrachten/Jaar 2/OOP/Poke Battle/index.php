@@ -10,7 +10,10 @@ $pikachu = new Pikachu();
 
 $charmeleon = new Charmeleon();
 
-print_r('<pre>'. $pikachu . '</pre>');
+// print_r('<pre>'. $pikachu . '</pre>');
 
-print_r('<pre>'. $charmeleon . '</pre>');
+$pikachu->attack($pikachu, $pikachu->attacks[1], $charmeleon);
+
+
+// print_r('<pre>'. $charmeleon . '</pre>');
 ?>
