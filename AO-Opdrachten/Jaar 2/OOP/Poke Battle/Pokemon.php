@@ -42,12 +42,19 @@ class Pokemon{
             }
         }
 
+          foreach ($pokemon->resistance as $resistance) {
+            if($this->energyType == $resistance->energy_type) {
+                $damage = $damage - $resistance->value;
+            }
+        }
+
+
         echo "<p> It dealt " . $damage . " damage to " . $pokemon->name . "</p>";
 
-        $this->get_damage($damage , $pokemon);
+        $this->getPopulationHealth($damage , $pokemon);
     }
 
-    public function get_damage($damage , $pokemon){
+    public function getPopulationHealth($damage , $pokemon){
 
     if($pokemon->hitPoints < $damage){
         echo "<br>". $pokemon->name . " is uitgeschakeld";
@@ -55,11 +62,15 @@ class Pokemon{
     }else{
         $pokemon->hitPoints = $pokemon->hitPoints - $damage;
         echo "<br>". $pokemon->name . " heeft nog " . $pokemon->hitPoints . " hitpoints <br>";
-    }
 
-       
-    }
+    }     
 
+    if($pokemon->hitPoints == 0){
+        echo $pokemon->name . " is uitgeschakeld";
+       }
+   
+
+    }
 
 }
 
