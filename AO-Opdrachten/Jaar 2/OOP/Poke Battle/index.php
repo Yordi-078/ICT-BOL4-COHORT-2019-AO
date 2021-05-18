@@ -16,12 +16,13 @@ height: 100px;
 
 </style>
 <?php
-require_once('Pokemon.php');
-require_once('Pikachu.php');
-require_once('Charmeleon.php');
-require_once('Weakness.php');
-require_once('Resistance.php');
-require_once('Attack.php');
+// require_once('Pokemon.php');
+// require_once('Pikachu.php');
+// require_once('Charmeleon.php');
+// require_once('Weakness.php');
+// require_once('Resistance.php');
+// require_once('Attack.php');
+include 'autoload.php';
 
 $pikachu = new Pikachu();
 

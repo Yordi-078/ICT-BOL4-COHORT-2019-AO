@@ -1,6 +1,5 @@
 <?php
 
-require_once('Pokemon.php');
 
 class Pikachu extends Pokemon
 {  
@@ -25,6 +24,5 @@ class Pikachu extends Pokemon
 }
 
 
- 
 
 ?>
