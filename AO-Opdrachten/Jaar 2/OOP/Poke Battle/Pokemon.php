@@ -40,6 +40,7 @@ class Pokemon{
     public $weakness;
     public $resistance;
     public $attacks;
+    public $pokemonAlive = 2;
 
     public function __construct($type, $name, $hitpoints, $weakness, $resistance, $attacks)
     {
@@ -50,7 +51,7 @@ class Pokemon{
         $this->weakness = $weakness;
         $this->resistance = $resistance;
         $this->attacks = $attacks;
-    
+        
     }
 
     public function __toString() {
@@ -72,7 +73,7 @@ class Pokemon{
             if($weakness->energy_type == $this->energyType){
                 $damage = $damage * $weakness->value;
             }
-        }
+        } 
 
           foreach ($pokemon->resistance as $resistance) {
             if($this->energyType == $resistance->energy_type) {
@@ -99,10 +100,32 @@ class Pokemon{
 
     if($pokemon->hitPoints == 0){
         echo $pokemon->name . " is uitgeschakeld";
+        
        }
-   
-
     }
+
+    public function population($array){
+        // var_dump($array);
+        echo " <br> <br> Dit zijn de pokemons die nog leven en zijn levens erbij! <br> <br>";
+        for ($i = 0; $i < count($array); $i++) {
+
+            if($array[$i]->hitPoints == 0){
+            echo $array[$i]->name;
+            echo " deze pokemon is dood";
+            }else{
+                echo "<br> <br> ";
+                echo $array[$i]->name;
+                echo " heeft nog " . $array[$i]->hitPoints . " hp";
+            }
+        }
+    }
+    //    var_dump($array[1]->name);
+    //    ;echo $array[0]->name
+    //    echo $array[0]->hitPoints;
+    
+
+   
+  
 
 }
 
