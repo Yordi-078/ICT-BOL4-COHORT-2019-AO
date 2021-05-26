@@ -31,12 +31,6 @@ $pikachu = new Pikachu();
 
 $charmeleon = new Charmeleon();
 
-$array = array($pikachu, $charmeleon);
-
-
-
-
-// print_r('<pre>'. $pikachu . '</pre>');
 
 
 for($i = 0; $i < 2; $i++){
@@ -45,12 +39,7 @@ for($i = 0; $i < 2; $i++){
     $charmeleon->attack($charmeleon, $charmeleon->attacks[$i], $pikachu);
 }
 
-
-$pikachu->population($array);
-
+echo " <br> <br> Het aantal levende pokemons:  " . Pokemon::population();
 
 
-
-
-// print_r('<pre>'. $charmeleon . '</pre>');
 ?>

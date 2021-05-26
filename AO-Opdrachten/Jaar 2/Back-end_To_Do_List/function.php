@@ -12,7 +12,14 @@
             return $conn;
     }
 
- 
+ /**
+ * Insert list to the database
+ *
+ * @name {string} - name from the list
+ * @description {string} - description from the list
+ *
+ *
+ */
  function insertList($name, $description){
     $conn = openDatabaseConnection();
     $stnt=$conn->prepare("INSERT INTO `lists` (`name`, `description`) Values (:name, :description)");
@@ -28,8 +35,6 @@ function getAllLists(){
     return $stnt->fetchAll();
 }
 
-
-
 function editList2($id, $name, $description){
 $conn = openDataBaseConnection(); 
 $stnt = $conn->prepare("UPDATE `lists` SET id = :id, name = :name,  description = :description WHERE id = :id");
@@ -41,7 +46,13 @@ $stnt->execute();
 }
 
 
-    
+   /**
+ * delete list from the database
+ *
+ * @id {int} - delete from database with id
+ *
+ *
+ */
 function deleteList($id){
     $conn = openDataBaseConnection();
     $stnt=$conn->prepare("DELETE FROM lists WHERE id= :deleteid");
@@ -54,7 +65,17 @@ function deleteTaskID($id){
     $stnt->execute([":deleteid" => $id]);
 }
 
-
+/**
+ * Insert task to the database
+ *
+ * @listid {int} listid - id from the list
+ * @name {string} - name from the task
+ * @description {string} - description from the task
+ * @status {string} - status if task is completed
+ * @time {time} - sets time that task is created or updated
+ *
+ *
+ */
 function insertTask($listid, $name, $description, $status, $time){
     $conn = openDatabaseConnection();
     $stnt=$conn->prepare("INSERT INTO `task` (`listid`,`name`, `description`, `status`, `time`) Values (:listid, :name, :description, :status, :time)");
@@ -79,6 +100,17 @@ function deleteTask($id){
     $stnt->execute([":taskid" => $id]);
     }
 
+/**
+ * Edit task from the database
+ *
+ * @listid {int} listid - id from the task to edit
+ * @name {string} - new name from the task
+ * @description {string} - new description from the task
+ * @status {string} - new status if task is completed
+ * @time {time} - new sets time that task is created or updated
+ *
+ *
+ */
 function editTask($id, $listid, $name, $description, $status, $time){
     $conn = openDataBaseConnection(); 
     $stnt = $conn->prepare("UPDATE `task` SET id = :id, listid = :listid,   name = :name,  description = :description,  status = :status,  time = :time WHERE id = :id");
@@ -94,7 +126,7 @@ function editTask($id, $listid, $name, $description, $status, $time){
 
 function getAllStatusOrderBy($id){
     $conn = openDataBaseConnection();
-    $stnt = $conn->prepare("SELECT * FROM task WHERE listid = :id ORDER BY status" );
+    $stnt = $conn->prepare("SELECT * FROM task WHERE listid = :id AND status = 'onvoltooid' ");
     $stnt->execute([":id" => $id]);
     return $stnt->fetchAll();
 }

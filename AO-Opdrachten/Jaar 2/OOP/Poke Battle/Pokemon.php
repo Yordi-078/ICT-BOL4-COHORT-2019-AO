@@ -9,7 +9,7 @@
 //alternatieven zijn dat je het gewoon gelijk gebruikt in de function zoals ik heb gedaan
 
 //public = je kan het over gebruiken .. private = je kan hem alleen binnen de class aanroepen ... protected = kan alleen gebruikt worden in de class en classes die deze clas extenden...
-// abstract = geen idee ... final = na deze function mag het niet meer overschreven worden (function nieuwe betekenis)
+// abstract = onnodige informatie verbergen maar wel wat ik mee wil sturen en krijg  final = na deze function mag het niet meer overschreven worden (function nieuwe betekenis)
 
 //inherance met extends kunnen we class gebruiken in de extends class
 //alternatief alles in de pikachu class zetten
@@ -27,20 +27,21 @@
 //static = de class krijgt de waarde en anders krijgt het object de waarde
 //voordeel/alternatief is dat je niet steeds objecten hoeft aan te maken
 
-
-
+//verschill class en object = de class is alles wat erin staan en object is de uitkomts
 
 
 class Pokemon{
 
-    public $name;
-    public $energyType;
-    public $hitPoints;
+    private $name;
+    private $energyType;
+    private $hitPoints;
     protected $hp;
     public $weakness;
     public $resistance;
     public $attacks;
-    public $pokemonAlive = 2;
+    private static $pokemons = [];
+  
+
 
     public function __construct($type, $name, $hitpoints, $weakness, $resistance, $attacks)
     {
@@ -51,6 +52,8 @@ class Pokemon{
         $this->weakness = $weakness;
         $this->resistance = $resistance;
         $this->attacks = $attacks;
+        // self::$pokemons++;
+        array_push(self::$pokemons, $this);
         
     }
 
@@ -68,7 +71,7 @@ class Pokemon{
         }
     }
 
-    public function damage($damage, $pokemon){ 
+    private function damage($damage, $pokemon){ 
         foreach($pokemon->weakness as $weakness){
             if($weakness->energy_type == $this->energyType){
                 $damage = $damage * $weakness->value;
@@ -87,7 +90,7 @@ class Pokemon{
         $this->getPopulationHealth($damage , $pokemon);
     }
 
-    public function getPopulationHealth($damage , $pokemon){
+    private function getPopulationHealth($damage , $pokemon){
 
     if($pokemon->hitPoints < $damage){
         echo "<br>". $pokemon->name . " is uitgeschakeld";
@@ -104,30 +107,34 @@ class Pokemon{
        }
     }
 
-    public function population($array){
-        // var_dump($array);
-        echo " <br> <br> Dit zijn de pokemons die nog leven en zijn levens erbij! <br> <br>";
-        for ($i = 0; $i < count($array); $i++) {
+    // public static function population($array){
+    //     // var_dump($array);
+    //     echo " <br> <br> Dit zijn de pokemons die nog leven en zijn levens erbij! <br> <br>";
+    //     for ($i = 0; $i < count($array); $i++) {
 
-            if($array[$i]->hitPoints == 0){
-            echo $array[$i]->name;
-            echo " deze pokemon is dood";
-            }else{
-                echo "<br> <br> ";
-                echo $array[$i]->name;
-                echo " heeft nog " . $array[$i]->hitPoints . " hp";
-            }
-        }
-    }
-    //    var_dump($array[1]->name);
-    //    ;echo $array[0]->name
-    //    echo $array[0]->hitPoints;
+    //         if($array[$i]->hitPoints == 0){
+    //         echo $array[$i]->name;
+    //         echo " deze pokemon is dood";
+    //         }else{
+    //             echo "<br> <br> ";
+    //             echo $array[$i]->name;
+    //             echo " heeft nog " . $array[$i]->hitPoints . " hp";
+    //         }
+    //     }
+    // }
     
+    public static function population(){
+    // echo self::$pokemons;
+    $pokemonPopulations = 0;
+          for ($i = 0; $i < count(self::$pokemons) ; $i++) {
+              if(self::$pokemons[$i]->hitPoints > 0){
+                $pokemonPopulations++;
+              }
+         }
+         return $pokemonPopulations;
+    }
 
-   
-  
-
-}
+    }   
 
 
 ?>

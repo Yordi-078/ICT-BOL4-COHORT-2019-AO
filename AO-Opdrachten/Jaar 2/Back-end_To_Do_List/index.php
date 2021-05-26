@@ -87,10 +87,12 @@ a:hover, a:active {
      box-shadow: 0 0 3px rgba(0, 0, 0, 0.1)
  }
 
- .completed {
-     color: gray;
-     text-decoration: line-through
+ .buttons{
+     color: white;
+     border: 1px solid black;
+     background-color:  #2980b9;
  }
+
 
  .green{
     color: #ADFF2F;
@@ -99,16 +101,23 @@ a:hover, a:active {
  .red{
      color: red;
     }
+ 
+ .form{
+   display: inline-block;
+ }
 
 </style>
 
-<a href="createList.php">Nieuwe Lijst</a> 
-<form class="buttons"  method="post">
-<input type="submit"  name="SorteerStatus">Sorteer op status</input>
+<form  class="form"  action="createList.php" method="post">
+<input class="buttons" type="submit"  name="SorteerStatus" value="Maak lijst"></input>
 </form>
 
-<form class="buttons"  method="post">
-<input type="submit"  name="SorteerTime">Sorteer op tijd</input>
+<form  class="form"   method="post">
+<input class="buttons" type="submit"  name="SorteerStatus" value="Sorteer op status"></input>
+</form>
+
+<form class="form"  method="post">
+<input class="buttons" type="submit"  name="SorteerTime" value="Sorteer op tijd"></input>
 </form> 
 
 
@@ -131,7 +140,7 @@ if(isset($_POST["SorteerStatus"]))
 {
  $tasks = getAllStatusOrderBy($id);
 }else if(isset($_POST["SorteerTime"])){
-    $tasks = getAllTimeOrderBy($id);
+ $tasks = getAllTimeOrderBy($id);
 }else{
   $tasks = getTasksWithId($id);     
 }
