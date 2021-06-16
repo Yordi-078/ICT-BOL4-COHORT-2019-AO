@@ -198,6 +198,17 @@ checkedResult.onclick = function(){
   addCheckExtraScore();
 }
 
+
+
+
+
+
+
+
+
+
+
+
 function addCheckExtraScore(){
   for(index = 0; index < parties.length; index++){
     var checkBox = document.createElement("INPUT");
